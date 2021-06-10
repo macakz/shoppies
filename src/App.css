@@ -41,3 +41,10 @@ a, a:hover, a:focus, a:active {
   text-decoration: none;
   color: inherit;
 }
+
+.container {
+  border-radius: 25px;
+  border: 2px solid #ffde20;
+  padding: 20px;
+  width: 33%;
+}

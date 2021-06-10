@@ -35,7 +35,7 @@ function App () {
             :
             searchResultData.map((item, index) => {
               return (
-                <div>
+                <div class="container">
                   <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                     <h1>Title: {item.Title}</h1>
                     <h2> Released: {item.Year}</h2>
