@@ -41,8 +41,8 @@ function App () {
                     <h2> Released: {item.Year}</h2>
                     <h3> Type: {item.Type}</h3>
                     <img src={item.Poster} alt="movie poster" />
-                    <button>Nominate</button>
                   </a>
+                  <button>Nominate</button>
                 </div>
               )
             })
