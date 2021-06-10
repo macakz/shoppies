@@ -19,14 +19,22 @@ function App () {
     setSearch(e.target.value)
     delayedQuery(e.target.value)
   }
+
   return (
     <div className="App">
       <h1>The Shoppies</h1>
+      <h3>Movie Title:</h3>
       <input
+        type="search"
         value={search}
-        placeholder="Search for a movie..."
         onChange={handleSearch}
       />
+      {
+        searchResultData
+          ?
+          <div>Results for: <b>{search}</b></div>
+          : <div></div>
+      }
       <div>
         {
           !searchResultData
@@ -35,15 +43,17 @@ function App () {
             :
             searchResultData.map((item, index) => {
               return (
-                <div class="container">
-                  <a href={`https://www.imdb.com/title/${item.imdbID}`}>
-                    <h1>Title: {item.Title}</h1>
-                    <h2> Released: {item.Year}</h2>
-                    <h3> Type: {item.Type}</h3>
-                    <img src={item.Poster} alt="movie poster" />
-                  </a>
-                  <button>Nominate</button>
-                </div>
+                <>
+                  <div class="container">
+                    <a href={`https://www.imdb.com/title/${item.imdbID}`}>
+                      <h1>Title: {item.Title}</h1>
+                      <h2> Released: {item.Year}</h2>
+                      <h3> Type: {item.Type}</h3>
+                      <img src={item.Poster} alt="movie poster" />
+                    </a>
+                    <button>Nominate</button>
+                  </div>
+                </>
               )
             })
         }
