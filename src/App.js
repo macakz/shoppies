@@ -1,19 +1,51 @@
-import './App.css';
+import { useState } from 'react'
 import axios from 'axios'
+import './App.css';
+import _ from "lodash";
 
 function App () {
 
-  const getMovie = async () => {
+  const [search, setSearch] = useState('')
+  const [searchResultData, setSearchResultData] = useState('')
 
-    let movieData = await axios.get("http://www.omdbapi.com/?apikey=9ded3126&s=band of brothers")
-    console.log(movieData.data.Search)
+  const sendQuery = async (query) => {
+    let data = await axios.get(`http://www.omdbapi.com/?apikey=9ded3126&s=${query}`)
+    let movieData = data.data.Search
+    setSearchResultData(movieData)
   }
+  const delayedQuery = _.debounce(q => sendQuery(q), 500);
 
-  getMovie()
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+    delayedQuery(e.target.value)
+  }
   return (
     <div className="App">
       <h1>The Shoppies</h1>
-    </div>
+      <input
+        value={search}
+        placeholder="Search for a movie..."
+        onChange={handleSearch}
+      />
+      <div>
+        {
+          !searchResultData
+            ?
+            <div>Please enter a movie name</div>
+            :
+            searchResultData.map((item, index) => {
+              return (
+                <>
+                  <h1>Title: {item.Title}</h1>
+                  <h2> Released: {item.Year}</h2>
+                  <h3> Type: {item.Type}</h3>
+                  <img src={item.Poster} alt="movie poster" />
+                </>
+              )
+            })
+        }
+      </div>
+    </div >
   );
 }
 
