@@ -78,8 +78,6 @@ function App () {
                   <div className="container">
                     <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                       <h1>Title: {item.Title}</h1>
-                      <h2> Released: {item.Year}</h2>
-                      <h3> Type: {item.Type}</h3>
                       <img src={item.Poster} alt="movie poster" />
                     </a>
                   </div>
