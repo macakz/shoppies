@@ -25,6 +25,15 @@ function App () {
     setNominate([...nominate, item])
   }
 
+  const removeFromNominationList = (item, index) => {
+    let nominationList = [...nominate]
+
+    if (index !== -1) {
+      nominationList.splice(index, 1)
+      setNominate(nominationList)
+    }
+  }
+
   return (
     <div className="App">
       <h1>The Shoppies</h1>
@@ -52,12 +61,12 @@ function App () {
                 <>
                   <div className="container">
                     <a href={`https://www.imdb.com/title/${item.imdbID}`}>
-                      <h1>Title: {item.Title}</h1>
-                      <h2> Released: {item.Year}</h2>
-                      <h3> Type: {item.Type}</h3>
-                      <img src={item.Poster} alt="movie poster" />
+                      <h1 className="title">Title: {item.Title}</h1>
+                      <h2 className="releaseDate"> Released: {item.Year}</h2>
+                      <h3 className="type"> Type: {item.Type}</h3>
+                      <img className="poster" src={item.Poster} alt="movie poster" />
                     </a>
-                    <button disabled={nominate.includes(item)}onClick={() => addToNominationList(item)}>Nominate</button>
+                    <button className="mainButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
                   </div>
                 </>
               )
@@ -77,9 +86,11 @@ function App () {
                 <>
                   <div className="container">
                     <a href={`https://www.imdb.com/title/${item.imdbID}`}>
-                      <h1>Title: {item.Title}</h1>
-                      <img src={item.Poster} alt="movie poster" />
+                      <h1 className="title">Title: {item.Title}</h1>
+                      <img className="poster" src={item.Poster} alt="movie poster" />
                     </a>
+                    <button className="mainButton" onClick={() => removeFromNominationList(index)}>Remove</button>
+
                   </div>
                 </>
               )
