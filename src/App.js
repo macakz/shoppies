@@ -69,14 +69,16 @@ function App () {
                         <h3 className="type"> Type: {item.Type}</h3>
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
-                      <button className="mainButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
+                      <div>
+                        <button className="mainButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
+                      </div>
                     </div>
                   </>
                 )
               })
           }
         </div>
-        
+
         <div className="nominationList">
           {
             !nominate
@@ -92,7 +94,7 @@ function App () {
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
                       <button className="mainButton" onClick={() => removeFromNominationList(index)}>Remove</button>
-
+                      
                     </div>
                   </>
                 )
