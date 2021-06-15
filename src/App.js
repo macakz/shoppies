@@ -10,7 +10,7 @@ function App () {
   const [nominate, setNominate] = useState('')
 
   const sendQuery = async (query) => {
-    let data = await axios.get(`http://www.omdbapi.com/?apikey=9ded3126&s=${query}`)
+    let data = await axios.get(`https://www.omdbapi.com/?apikey=9ded3126&s=${query}`)
     let movieData = data.data.Search
     setSearchResultData(movieData)
   }
