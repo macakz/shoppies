@@ -1,3 +1,6 @@
+body {
+background-color: #fffff2;
+}
 a, a:hover, a:focus, a:active {
 	text-decoration: none;
 	color: inherit;
@@ -7,12 +10,15 @@ a, a:hover, a:focus, a:active {
 border-bottom: 4px solid #494949;
 }
 .heading {
-	font-family: 'Bangers', cursive;
-	font-size: 70px;
+	font-family: 'Monoton', cursive;
+	color: gold;
+	font-size: 60px;
 	text-align: center;
 }
 
 .search {
+	background-color: #fffff2;
+
 	color: black;
 	font-size: 30px;
 	width: 33%;
