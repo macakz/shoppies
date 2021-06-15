@@ -26,3 +26,10 @@ a, a:hover, a:focus, a:active {
 	border-color: #20bf6b !important;
 	transition: all 0.3s ease 0s;
 }
+
+.mainButton:disabled {
+	color: #bf2020 !important;
+	border-radius: 50px;
+	border-color: #bf2020 !important;
+	transition: all 0.3s ease 0s;
+}
