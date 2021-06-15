@@ -71,7 +71,7 @@ function App () {
               ?
               <div></div>
               :
-              searchResultData.map((item, index) => {
+              searchResultData.map((item) => {
                 return (
                   <>
                     <div className="container">
@@ -114,7 +114,6 @@ function App () {
                 )
               })
           }
-
         </div>
       </div>
     </div >
