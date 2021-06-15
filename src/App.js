@@ -34,6 +34,9 @@ function App () {
     }
   }
 
+  const disableHandler = (item) => {
+    return nominate.includes(item) || nominate.length >= 5
+  }
   return (
     <div className="App">
       <div className="searchArea">
@@ -46,11 +49,19 @@ function App () {
           onChange={handleSearch}
         />
       </div>
+
       {
         searchResultData
           ?
           <p>Results for: <b>{search}</b></p>
           : <div></div>
+      }
+      {
+        nominate.length > 4 ?
+          <div>
+            <p>Limit of 5 reached. Please remove one choice if you wish to choose another</p>
+          </div>
+          : null
       }
       <div className="listContainer">
         <div className="movieSearchList">
@@ -65,11 +76,10 @@ function App () {
                     <div className="container">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
-                        <h2 className="releaseDate"> Released: {item.Year}</h2>
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
                       <div className="addButtonContainer">
-                        <button className="addButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
+                        <button className="addButton" disabled={disableHandler(item)} onClick={() => addToNominationList(item)}>Nominate</button>
                       </div>
                     </div>
                   </>
@@ -84,13 +94,16 @@ function App () {
               ?
               <div></div>
               :
+              <h1>test</h1>
+              &&
               nominate.map((item, index) => {
                 return (
                   <>
                     <div className="container">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
-                        <img className="poster" src={item.Poster} alt="movie poster" />
+                        <h2 className="releaseDate"> Released: {item.Year}</h2>
+
                       </a>
                       <div className="removeButtonContainer">
                         <button className="removeButton" onClick={() => removeFromNominationList(index)}>Remove</button>
@@ -100,6 +113,7 @@ function App () {
                 )
               })
           }
+
         </div>
       </div>
     </div >
