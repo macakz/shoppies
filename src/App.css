@@ -9,7 +9,9 @@ text-align: center;
 }
 
 .search {
+	color: black;
 	font-size: 30px;
+	width: 33%;
 	border: none;
 	border-bottom:  4px solid #494949 !important
 }
@@ -22,6 +24,9 @@ textarea:focus, input:focus{
 	justify-content: space-evenly;
 }
 
+.addButtonContainer {
+	
+}
 .addButton {
 	color: #494949 !important;
 	text-transform: uppercase;
@@ -31,6 +36,7 @@ textarea:focus, input:focus{
 	border-radius: 6px;
 	display: inline-block;
 	transition: all 0.3s ease 0s;
+
 }
 
 .addButton:hover {
@@ -78,9 +84,17 @@ textarea:focus, input:focus{
 }
 
 .releaseDate{
-	
+	text-align: center;
+
 }
 
 .poster{
-	
+	align-items: center;
+
+}
+
+.limit {
+	color: red;
+	text-decoration: underline;
+	font-weight: bold;
 }

@@ -43,6 +43,7 @@ function App () {
         <h1 className="heading">The Shoppies</h1>
         <input
           className="search"
+          placeholder= "Please enter a movie title..."
           type="search"
           value={search}
           onChange={handleSearch}
