@@ -4,6 +4,18 @@ a, a:hover, a:focus, a:active {
 	color: inherit;
 }
 
+.heading {
+text-align: center;
+}
+
+.search {
+	font-size: 30px;
+	border: none;
+	border-bottom:  4px solid #494949 !important
+}
+textarea:focus, input:focus{
+    outline: none;
+}
 
 .listContainer {
 	display: flex;
@@ -62,7 +74,7 @@ a, a:hover, a:focus, a:active {
 }
 
 .title{
-	
+	text-align: center;
 }
 
 .releaseDate{

@@ -40,8 +40,7 @@ function App () {
   return (
     <div className="App">
       <div className="searchArea">
-        <h1>The Shoppies</h1>
-        <h3>Movie Title:</h3>
+        <h1 className="heading">The Shoppies</h1>
         <input
           className="search"
           type="search"
@@ -59,7 +58,7 @@ function App () {
       {
         nominate.length > 4 ?
           <div>
-            <p>Limit of 5 reached. Please remove one choice if you wish to choose another</p>
+            <p className="limit">Limit of 5 reached. Please remove one choice if you wish to choose another</p>
           </div>
           : null
       }
