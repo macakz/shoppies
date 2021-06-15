@@ -39,7 +39,7 @@ function App () {
   }
   return (
     <div className="App">
-      <div className="searchArea">
+      <div className="headingContainer">
         <h1 className="heading">The Shoppies</h1>
         <input
           className="search"
@@ -74,7 +74,7 @@ function App () {
               searchResultData.map((item) => {
                 return (
                   <>
-                    <div className="container">
+                    <div className="searchContainer">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
                         <img className="poster" src={item.Poster} alt="movie poster" />
@@ -100,7 +100,7 @@ function App () {
               nominate.map((item, index) => {
                 return (
                   <>
-                    <div className="container">
+                    <div className="nominationContainer">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
                         <h2 className="releaseDate"> Released: {item.Year}</h2>
