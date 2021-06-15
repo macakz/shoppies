@@ -53,7 +53,7 @@ function App () {
       {
         searchResultData
           ?
-          <p>Results for: <b>{search}</b></p>
+          <p>Results for: <b>"{search}"</b></p>
           : <div></div>
       }
       
