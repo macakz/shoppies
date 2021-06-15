@@ -56,6 +56,7 @@ function App () {
           <p>Results for: <b>{search}</b></p>
           : <div></div>
       }
+      
       {
         nominate.length > 4 ?
           <div>
@@ -68,7 +69,7 @@ function App () {
           {
             !searchResultData
               ?
-              <p>Please enter a movie name</p>
+              <div></div>
               :
               searchResultData.map((item, index) => {
                 return (
