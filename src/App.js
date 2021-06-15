@@ -66,11 +66,10 @@ function App () {
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
                         <h2 className="releaseDate"> Released: {item.Year}</h2>
-                        <h3 className="type"> Type: {item.Type}</h3>
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
-                      <div>
-                        <button className="mainButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
+                      <div className="addButtonContainer">
+                        <button className="addButton" disabled={nominate.includes(item)} onClick={() => addToNominationList(item)}>Nominate</button>
                       </div>
                     </div>
                   </>
@@ -93,8 +92,9 @@ function App () {
                         <h1 className="title">{item.Title}</h1>
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
-                      <button className="mainButton" onClick={() => removeFromNominationList(index)}>Remove</button>
-                      
+                      <div className="removeButtonContainer">
+                        <button className="removeButton" onClick={() => removeFromNominationList(index)}>Remove</button>
+                      </div>
                     </div>
                   </>
                 )
