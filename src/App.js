@@ -26,7 +26,7 @@ function App () {
     setNominate([...nominate, item])
   }
 
-  const removeFromNominationList = (item, index) => {
+  const removeFromNominationList = ( index) => {
     let nominationList = [...nominate]
 
     if (index !== -1) {
@@ -34,7 +34,10 @@ function App () {
       setNominate(nominationList)
     }
   }
-
+  const removalAlert = (item, index) => {
+    alert(`${item.Title} has been removed from your nomination list`)
+    removeFromNominationList(item,index)
+  }
   const disableHandler = (item) => {
     return nominate.includes(item) || nominate.length >= 5
   }
@@ -108,7 +111,7 @@ function App () {
                         <h2 className="releaseDate"> Released: {item.Year}</h2>
                       </a>
                       <div className="removeButtonContainer">
-                        <button className="removeButton" onClick={() => removeFromNominationList(index)}>Remove</button>
+                        <button className="removeButton" onClick={() => removalAlert(item,index)}>Remove</button>
                       </div>
                     </div>
                   </>
