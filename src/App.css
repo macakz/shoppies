@@ -22,16 +22,22 @@ border-bottom: 4px solid #494949;
 
 .search {
 	background-color: #fffff2;
-
 	color: black;
 	font-size: 30px;
 	width: 33%;
 	border: none;
 	border-bottom:  4px solid #494949;
 	margin: 20px;	
+	font-family:'Chakra Petch';
+
 }
 
-
+.nominateCount {
+	color: black;
+	font-size: 30px;
+	margin: 20px;	
+	font-family:'Chakra Petch';
+}
 textarea:focus, input:focus{
     outline: none;
 }

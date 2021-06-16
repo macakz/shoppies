@@ -62,7 +62,7 @@ function App () {
             value={search}
             onChange={handleSearch}
           />
-          <p>{<GrTrophy />} Nominations: {nominateCount} / 5</p>
+          <p className="nominateCount">Nominations: {nominateCount} / 5</p>
         </div>
       </div>
 
