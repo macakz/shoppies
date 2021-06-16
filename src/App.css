@@ -57,7 +57,6 @@ textarea:focus, input:focus{
 	padding: 20px;
 	border: 4px solid #494949 !important;
 	border-radius: 6px;
-	display: inline-block;
 	transition: all 0.3s ease 0s;
 
 }
@@ -107,6 +106,7 @@ textarea:focus, input:focus{
 	margin: 20px;
 	border: 4px solid rgb(248, 248, 42);
 	border-radius: 6px;
+	
 }
 
 .title{
@@ -121,7 +121,8 @@ textarea:focus, input:focus{
 
 .poster{
 	align-items: center;
-
+height: 400px;
+width: 250px;
 }
 
 .limit {

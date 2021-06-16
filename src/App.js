@@ -66,19 +66,19 @@ function App () {
         </div>
       </div>
 
-        {
-          searchResultData
-            ?
-            <p>Results for: <b>"{search}"</b></p>
-            : <div></div>
-        }
-        {
-          nominate.length > 4 ?
-            <div className="limitNotification">
-              <p className="limit">{nominateMaxAlert()}Limit of 5 reached. Please remove one choice if you wish to choose another</p>
-            </div>
-            : null
-        }
+      {
+        searchResultData
+          ?
+          <p>Results for: <b>"{search}"</b></p>
+          : <div></div>
+      }
+      {
+        nominate.length > 4 ?
+          <div className="limitNotification">
+            <p className="limit">{nominateMaxAlert()}Limit of 5 reached. Please remove one choice if you wish to choose another</p>
+          </div>
+          : null
+      }
       <div className="listContainer">
         <div className="movieSearchList">
           {
@@ -92,7 +92,10 @@ function App () {
                     <div className="searchContainer">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <h1 className="title">{item.Title}</h1>
-                        <img className="poster" src={item.Poster} alt="movie poster" />
+                        <h2 className="releaseDate"> Released: {item.Year}</h2>
+                        <div className="poster">
+                          <img src={item.Poster} alt="movie poster" />
+                        </div>
                       </a>
                       <div className="addButtonContainer">
                         <button className="addButton" disabled={disableHandler(item)} onClick={() => addAlert(item)}>Nominate</button>
@@ -119,7 +122,6 @@ function App () {
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
                         <GrTrophy className="trophyIcon" />
                         <h1 className="title">{item.Title}</h1>
-                        <h2 className="releaseDate"> Released: {item.Year}</h2>
                       </a>
                       <div className="removeButtonContainer">
                         <button className="removeButton" onClick={() => removalAlert(item, index)}>Remove</button>
