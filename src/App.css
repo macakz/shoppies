@@ -122,8 +122,12 @@ textarea:focus, input:focus{
 	color: red;
 	text-decoration: underline;
 	font-weight: bold;
+	text-align: right;
+
 }
+
 
 .trophyIcon {
 font-size: 50px;
 }
+

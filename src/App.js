@@ -44,39 +44,41 @@ function App () {
   const disableHandler = (item) => {
     return nominate.includes(item) || nominate.length >= 5
   }
-  
-  let nominateCount = nominate.length 
+
+  let nominateCount = nominate.length
+
+  const nominateMaxAlert = () => {
+    alert("Wohoo you have reached your 5 nominations. If you wish to add anymore you will have to remove a nomination!")
+  }
   return (
     <div className="App">
       <div className="headingContainer">
         <h1 className="heading">The Shoppies</h1>
         <div className="headingSubContainer">
-        <input
-          className="search"
-          placeholder="Please enter a movie title..."
-          type="search"
-          value={search}
-          onChange={handleSearch}
-        />
-        <p>{<GrTrophy/>} Nominations: {nominateCount} / 5</p>
+          <input
+            className="search"
+            placeholder="Please enter a movie title..."
+            type="search"
+            value={search}
+            onChange={handleSearch}
+          />
+          <p>{<GrTrophy />} Nominations: {nominateCount} / 5</p>
         </div>
       </div>
-      
 
-      {
-        searchResultData
-          ?
-          <p>Results for: <b>"{search}"</b></p>
-          : <div></div>
-      }
-
-      {
-        nominate.length > 4 ?
-          <div>
-            <p className="limit">Limit of 5 reached. Please remove one choice if you wish to choose another</p>
-          </div>
-          : null
-      }
+        {
+          searchResultData
+            ?
+            <p>Results for: <b>"{search}"</b></p>
+            : <div></div>
+        }
+        {
+          nominate.length > 4 ?
+            <div className="limitNotification">
+              <p className="limit">{nominateMaxAlert()}Limit of 5 reached. Please remove one choice if you wish to choose another</p>
+            </div>
+            : null
+        }
       <div className="listContainer">
         <div className="movieSearchList">
           {
