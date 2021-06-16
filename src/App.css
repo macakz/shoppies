@@ -48,9 +48,12 @@ textarea:focus, input:focus{
 }
 
 .addButtonContainer {
-	
+	margin-top: 70px;
+	overflow: hidden;
+	padding-right: 15px;
 }
 .addButton {
+	float:right;
 	color: #494949 !important;
 	text-transform: uppercase;
 	background: #ffffff;
