@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css';
 import _ from "lodash";
-import {GrTrophy} from 'react-icons/gr'
+import { GrTrophy } from 'react-icons/gr'
 
 function App () {
 
@@ -25,8 +25,11 @@ function App () {
   const addToNominationList = (item) => {
     setNominate([...nominate, item])
   }
-
-  const removeFromNominationList = ( index) => {
+  const addAlert = (item) => {
+    alert(`${item.Title} has been added to your nomination list`)
+    addToNominationList(item)
+  }
+  const removeFromNominationList = (index) => {
     let nominationList = [...nominate]
 
     if (index !== -1) {
@@ -36,7 +39,7 @@ function App () {
   }
   const removalAlert = (item, index) => {
     alert(`${item.Title} has been removed from your nomination list`)
-    removeFromNominationList(item,index)
+    removeFromNominationList(index)
   }
   const disableHandler = (item) => {
     return nominate.includes(item) || nominate.length >= 5
@@ -47,12 +50,14 @@ function App () {
         <h1 className="heading">The Shoppies</h1>
         <input
           className="search"
-          placeholder= "Please enter a movie title..."
+          placeholder="Please enter a movie title..."
           type="search"
           value={search}
           onChange={handleSearch}
         />
+        <p>Nominations remaining: </p>
       </div>
+      
 
       {
         searchResultData
@@ -60,7 +65,7 @@ function App () {
           <p>Results for: <b>"{search}"</b></p>
           : <div></div>
       }
-      
+
       {
         nominate.length > 4 ?
           <div>
@@ -84,7 +89,7 @@ function App () {
                         <img className="poster" src={item.Poster} alt="movie poster" />
                       </a>
                       <div className="addButtonContainer">
-                        <button className="addButton" disabled={disableHandler(item)} onClick={() => addToNominationList(item)}>Nominate</button>
+                        <button className="addButton" disabled={disableHandler(item)} onClick={() => addAlert(item)}>Nominate</button>
                       </div>
                     </div>
                   </>
@@ -106,12 +111,12 @@ function App () {
                   <>
                     <div className="nominationContainer">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
-                      <GrTrophy  className="trophyIcon" />
+                        <GrTrophy className="trophyIcon" />
                         <h1 className="title">{item.Title}</h1>
                         <h2 className="releaseDate"> Released: {item.Year}</h2>
                       </a>
                       <div className="removeButtonContainer">
-                        <button className="removeButton" onClick={() => removalAlert(item,index)}>Remove</button>
+                        <button className="removeButton" onClick={() => removalAlert(item, index)}>Remove</button>
                       </div>
                     </div>
                   </>
