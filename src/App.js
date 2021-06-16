@@ -44,10 +44,13 @@ function App () {
   const disableHandler = (item) => {
     return nominate.includes(item) || nominate.length >= 5
   }
+  
+  let nominateCount = nominate.length 
   return (
     <div className="App">
       <div className="headingContainer">
         <h1 className="heading">The Shoppies</h1>
+        <div className="headingSubContainer">
         <input
           className="search"
           placeholder="Please enter a movie title..."
@@ -55,7 +58,8 @@ function App () {
           value={search}
           onChange={handleSearch}
         />
-        <p>Nominations remaining: </p>
+        <p>{<GrTrophy/>} Nominations: {nominateCount} / 5</p>
+        </div>
       </div>
       
 

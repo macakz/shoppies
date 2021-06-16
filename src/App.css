@@ -9,6 +9,10 @@ a, a:hover, a:focus, a:active {
 .headingContainer {
 border-bottom: 4px solid #494949;
 }
+.headingSubContainer {
+	display: flex;
+	justify-content: space-between;
+}
 .heading {
 	font-family: 'Monoton', cursive;
 	color: gold;
