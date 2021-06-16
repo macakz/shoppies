@@ -2,6 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import './App.css';
 import _ from "lodash";
+import {GrTrophy} from 'react-icons/gr'
 
 function App () {
 
@@ -102,9 +103,9 @@ function App () {
                   <>
                     <div className="nominationContainer">
                       <a href={`https://www.imdb.com/title/${item.imdbID}`}>
+                      <GrTrophy  className="trophyIcon" />
                         <h1 className="title">{item.Title}</h1>
                         <h2 className="releaseDate"> Released: {item.Year}</h2>
-
                       </a>
                       <div className="removeButtonContainer">
                         <button className="removeButton" onClick={() => removeFromNominationList(index)}>Remove</button>
