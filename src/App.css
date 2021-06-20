@@ -32,6 +32,10 @@ border-bottom: 4px solid #494949;
 
 }
 
+.resultsFor {
+	border-bottom:  4px solid #494949;
+	padding-bottom: 20px;
+}
 .nominateCount {
 	color: black;
 	font-size: 30px;

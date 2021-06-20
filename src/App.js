@@ -69,7 +69,7 @@ function App () {
       {
         searchResultData
           ?
-          <p>Results for: <b>"{search}"</b></p>
+          <p className="resultsFor">Results for: <b>"{search}"</b></p>
           : <div></div>
       }
       {
